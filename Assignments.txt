@@ -1,0 +1,43 @@
+Assignment 1:
+Write a Test Script for following actions on Facebook WebPage
+	1. open Facebook web-page
+	2. enter email-ID/ phone number
+	3. enter password
+	4. click on 'Log-In' button 
+
+Assignment 2:
+Write a Test Script for following actions on Facebook WebPage
+	1. open Facebook web-page
+	2. click on 'Create New Account' button
+	3. Enter First-name, Sir-name, mobile-number, new-password
+	4. Select date of birth using drop-down 
+		a. date
+		b. month
+		c. year
+	5. select gender using radio button
+	6. click on 'Sin-up' button
+
+
+Assignment 3:
+Write a Test Script for following actions on Facebook WebPage
+	1. open Facebook web-page
+	2. Enter Email ID 
+	3. Click on 'Forgotten password' link
+	4. Enter email-ID in Find Your Account field
+	5. Click on search button
+	6. Select radio button for 'send via email' option
+	7. click on continue option
+	
+Assignment 4:
+Write a Test Script for following actions on Flipkart.com WebPage
+	1. Click on login button
+	2. Enter UserID, Password & click on login
+	3. Search "redmi note 10 pro"
+	4. Search "REDMI Note 10 Pro (Dark Night, 128 GB)  (8 GB RAM)" & click on it
+	5. Extract its price & display in console
+
+Assignment 5:
+Write a Test Script for following actions on Flipkart.com WebPage
+	1. Prepare test-data for multiple userid & password in excel (.xlsx OR .csv)
+	2. Enter UserID, Password & wait
+	3. repeat step 2 until all test-data is finished 

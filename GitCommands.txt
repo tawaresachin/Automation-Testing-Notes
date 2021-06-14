@@ -1,0 +1,26 @@
+1. To set gitbash user name 						--> 	git config --global user.name <username>
+2. To set gitbash email ID							-->		git config --global user.email <registered email to github>
+3. To init git instance localy						-->		git init
+	To clone remote repository to local				-->		git clone -v <name of remote repository>
+	To create new branch locally					--> 	git checkout -b <branch name>
+4. To check available local branches 				-->		git branch
+5. To check available remote branches(github(		--> 	git branch -r
+6. To switch to desired local branches				-->		git checkout <branch name>
+7. To get current pending code sync					-->		git status
+8. To add specific/all pending files to staging 	-->		git add <name of file to commit>  or git add.
+9. To commit added file to local branch				-->		git commit -m <commit message>
+10. To add remote repository (github)				-->		git remote add <remote repository url.git>	
+11. To push committed code to remote repo (github)	--> 	git push -u <remote repository name> <remote branch name>
+12. To pull latest code frome remote to local		-->		git pull -v <remote repository url > <local directory path>
+
+
+							 |---------------------------------------------------------------|
+config-->init-->clone/pull-->|checkout--->status------>add------------->commit-------------->|push
+	Remote repository------> |IDE workspace ----> Staging Space (Buffer) --> Local Repository| --> Remote Repository 
+		(gitHub)			 |---------------------------------------------------------------|			(gitHub)
+										            Your Local Machine
+													
+													
+													
+													
+													

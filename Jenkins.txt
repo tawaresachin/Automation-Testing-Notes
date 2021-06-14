@@ -1,0 +1,16 @@
+**Initial Jenkins Setup :
+1. Download jenkins for windows https://www.jenkins.io/download/
+2. Install Jenkins for port 8080 on local drive --> in browser https://jenkins:8080 will open asking Administrator Password
+3. open C:\Program Files\Jenkins\secrets\initialAdminPassword --> copy password & paste Administrator Password
+4. Install suggested plugins 
+5. "Create First Admin User" --> Save and Finish
+6. copy jenkin Instance url (say- https://jenkins:8080) & save for future reference -> Save & Finish
+7. Start using Jenkins --> launching Jenkin dashboard
+8. Select menue- 'Manage Jenkins' --> select option - 'Manage plugins' --> Select 'Git Plugin'--> Install without Restart
+9. Select menue- 'Manage Jenkins' --> Check if 'Git plugin' appears in the list
+
+**Integrate Jenkins with GitHub:
+1. Open Jenkins dashboard using http://localhost:8080/
+2. Click on link 'Create new jobs'
+3. Enter Item Name (project Name) --> Select FreeStyle Project  --> Click OK
+4. 

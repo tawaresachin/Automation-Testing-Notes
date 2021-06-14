@@ -1,0 +1,293 @@
+=====================================================================================================
+				********************JAVA NOTES******************
+=====================================================================================================
+Eclipse IDE (EE) OR IntelliJ (community)
+JDK-8/15
+GitHub Account
+Git
+Jenkins
+------------------------------------------------------------------------------------------------------
+1. Install JDK-8/15
+2. Find path of Java.exe
+3. Environment Setup for JAVA --> MyComputer-properties-advance setting-environment variable
+	-->user variable- path of java.exe
+	-->System variable-path of java.exe
+-open command prompt & check JAVA version using command 'JAVA -version'
+4. Download Eclipse IDE from https://www.eclipse.org/downloads/packages/installer
+-start installing using installer
+-choose option 'Eclipse IDE for JAVA developers'
+--Download Installer & Install JAVA
+
+-------------------------------------------------------------------------------------------------------
+Java Structural Hierarchy
+Project -->Package-->Class -->Data-members & Methods-->Variables & Loops
+
+-------------------------------------------------------------------------------------------------------
+Variables --> data members to store information temporary
+Data-types:
+	A.Primitive data-types (m/m size is fixed)
+	 1. byte- 8-bit/1-byte
+	 2. short- 2 bytes
+	 3. int- 4 bytes
+	 4. long- 8 bytes
+	 5. float- 4 bytes
+	 6. double- 8 bytes
+	 7. char - 2 bytes
+	 8. boolean - 1 bit
+	 
+	B. Non Primitive data-types (m/m size is adaptive)
+	 1. Class
+	 2. String
+	 
+-------------------------------------------------------------------------------------------------------	 
+Access Specifier:
+	 1. Public - throughout the project
+	 2. Default- within a specific package
+	 3. Private- only within class
+	 4. Protected - within the package but inherited
+	 
+Access Modifier-
+	 1. Static- belongs to class (uses memory of class)
+	 2. Final- it remains unchanged over the classes
+	 
+Identifier- Name of entity (Class_Name, Method_Name etc.)
+	 
+-------------------------------------------------------------------------------------------------------
+Class: definition block that contains properties (data-members) & actions (methods, blocks, constructors etc.)
+Types of Class:
+		1. Concrete Class --> class with all complete methods
+		2. Abstract Class --> class with few incomplete (Abstract) methods
+						  --> Starts with keyword- "Abstract"
+		3. Interface --> Special type of class with all incomplete (100% abstract) methods
+		             --> all data members are static & final
+					 --> does not contain any constructor 
+					 --> starts with keyword- "Interface"
+		4. Main Class/Base Class --> class that contains main method require to execute code by JVM
+		
+-------------------------------------------------------------------------------------------------------
+Constructor: special member of class that has no return-type & which is required,
+		--> to initialize data members
+		--> to load non-static methods into object for execution
+Types of constructor:
+		1. Constructor without argument / zero argument constructor
+		2. Constructor with argument
+		
+-------------------------------------------------------------------------------------------------------
+Methods: the action items of java that may contain data-members, parameters, objects or operations
+Types of Methods:
+		1. Static Method --> acquires class memory to perform operations
+						 --> uses access modifier as "Static"
+						 --> can be called in main method as "className.methodName"
+						 --> execution is faster than non-static method (e.g. Main method)
+		2. Non-Static Method --> acquires memory alloted by object of the class to perform operations
+						--> do not require any access modifier
+						--> can be called in main method as "objectName.methodName"
+						--> execution is slower than static method
+						
+		** Main Method  --> default method required to call by JVM to run the class (as at the beginning
+							object is missing)
+						--> it is always static since it uses class memory in absence of object
+						--> argument(or variable) passed into method is String-Array require to fetch 
+							to command-line while execution
+		**Static Blocks --> highest priority member of class
+						--> always executed before main method
+						--> does not require any object to execute as it used class memory
+						
+-------------------------------------------------------------------------------------------------------
+Calling Methods within Methods:
+
+	Static Method		Non-static Method
+	
+	Static--> YES		Static-->YES
+	Non-Static-->NO		Non-Static-->YES
+	
+-------------------------------------------------------------------------------------------------------
+Object/Instance: provides memory to execute combination of data & procedures
+		--> datatype of object is class_name
+		--> constructor of the class is require to reserve memory for object (with 'New' keyword)
+		--> <Class_Name> object_name=new <Class_name()>;
+		--> Object can be created for only complete classes or class with main method
+		
+-------------------------------------------------------------------------------------------------------
+Calling variables within Methods:
+
+	Static method		Non-static Method
+	
+	Static--> YES		Static-->YES
+	Instance-->NO		Instance->YES
+	
+-------------------------------------------------------------------------------------------------------
+String Class: String is a collection of characters
+		-->final class of 'java.lang' package of JAVA library
+		-->it is Non-Primitive data-type
+		-->acquired memory dynamically
+Storing String:
+			1. In Constant-Pool Area --> Duplicates are not allowed
+			2. In Non-Constant Pool Area --> Duplicates are allowed
+Important methods of String Class: 
+		S1.length(),		 S1.equals(S2), 	  S1.equalsIgnoreCase(S2),	S1.concat(S2),	 	  
+		S1.split(""),		 S1.charAt(2),		  S1.indexOf('C'), 	  		S1.lastIndexOf('i'),
+ 		S1.contains(S2), 	 S1.toUpperCase(),    S1.toLowerCase,      		S1.startsWith("Ba"),
+		S1.endsWith("ch"),   S1.isEmpty(), 		  S1.Replace("B","Sn"),		S1.subString(1,3)
+
+-------------------------------------------------------------------------------------------------------
+Arrays Class: Array is fixed size collection of homogeneous members (Same data-type)
+		--> class of 'java.util' package of JAVA library
+Types of arrays-
+		a. One-Dimensional arrays
+		b. Multi-Dimensional arrays
+Important Methods of Arrays Class:
+		Arrays.toString(Arr),			Arrays.sort(Arr),			Arrays.parallelSort(Arr,3,7),
+		Arrays.binarySearch(Arr,'is'),	Arrays.equals(Arr1,Arr2),	Array2D(Arr3)
+
+-------------------------------------------------------------------------------------------------------
+Collection : collection  is group of objects (may be in-homogeneous) that are grow-able in size
+			--> 'Collections' is root(parent) interface of "java.util" package of java library
+			--> 'Collections' has major 4 child interfaces 
+				1. List
+				2. Set
+				3. Queue
+				4. Maps
+				
+			--> Each of child interface has its own implementation classes
+				1. List : Duplicates are allowed
+					a. ArrayList<T>  --> Default size=10, Resizable (CC*1.5 +1), Non-synchronized, best for retrieval 
+									 --> Important methods: add, get, set,remove,clear, listIterator
+					b. Vector<T>	 -->Default size=10 , Resizable (CC*2), Synchronized, best for retrieval
+									 --> Important methods: add,get, set,remove,clear, listIterator
+					c. LinkedList<T> --> Default size=10, Linear, Sychronized, best for Insertion & deletion
+									 --> Important methods: add,get, set,remove,clear, listIterator
+					d. Stack<T> 	 --> Follows LIFO storage
+									 --> Important methods:add,get, set,remove,clear, listIterator,
+ 									 --> Additional methods: push, pop, peek (to extract element at the top)
+									 
+				2. Set: Duplicates are not allowed, multiple null are not allowed
+					a. HashSet<T>	 		--> order of insertion is random (not maintained)
+											--> null is allowed
+											--> Important methods: add, remove,clear,size,iterator
+					b. LinkedHashSet<T>		--> order of insertion is maintained
+											--> null is allowed
+											--> Important methods: add, remove,clear,size,iterator
+					c. TreeSet<T>			--> order of insertion is maintained in ascending order
+											--> null is not allowed
+											--> Different data-types are not allowed (only Homogeneous objects allowed)
+											--> Same as Array but dynamic in size
+											--> Important methods: add, remove,clear,size,iterator
+					
+				3. Queue: LinkedList<T>		--> based on List interface (LinkedList)
+											--> works on FIFO architecture
+											--> Important methods: add, remove,clear,size,iterator
+											--> Additional methods: peek, poll (retrieve & remove top element)
+				4. Maps:					--> Stores object in Key-Value pair <K,V>
+											--> Duplicate values are allowed with unique key
+					a. HashMap<K,V>			--> Non-synchronized in nature
+											--> Allows 'NULL' key (first priority)
+											--> multiple 'NULL' values are possible
+											--> Important methods: put,get,remove, values, containsKeys, entrySet
+					b. HashTable<K,V>		--> Synchronized in nature
+											--> Do not allow 'NULL' key or values
+											--> order of insertion is random (not maintained)
+											--> Important methods: put,get,remove, values, containsKeys, entrySet
+											
+-------------------------------------------------------------------------------------------------------
+Wrapper Classes: wrap around primitive data-type
+Important Wrapper-Classes:
+			primitive data-type		Wrapper Class	Associated Methods  
+			int ** 					--> Integer    	-->toString(), valueOf(), equals(), compareTo(), parseInt()
+			float  					--> Float      	-->toString(), valueOf(), equals(), compareTo(), parseFloat()
+			char  **				--> Character 	-->toString(), valueOf(), toUpperCase, toLowerCase
+			double **				--> Double    	-->toString(), valueOf(), equals(), compareTo(), parseDouble()
+			boolean					--> Boolean		-->toString(), valueOf()
+				
+-------------------------------------------------------------------------------------------------------
+Loops in JAVA:
+1. for-loop
+2. for-each loop
+3. do-while loop
+4. while
+
+Control statements:
+1. If-else
+2. nested if
+3. elsif
+4. switch-case-default
+5. break
+6. continue
+				
+-------------------------------------------------------------------------------------------------------
+OOPS concepts in JAVA: Java is object Oriented language (unlike C is process oriented)
+
+			1. Encapsulation --> binding of data & code together 
+							 --> class itself is example of encapsulation (encapsulates variables, objects, methods,Enums etc)
+							 
+			2. Inheritance	 --> extending properties of one class by multiple classes
+							 --> keyword used by inherited class is 'extends'
+							 --> Parent Class/Super Class: from where the properties are being inherited
+							 --> Child Class/ Sub Class: class which inherits the properties of parent class
+					Types of Inheritance:
+						2.a) Single Level Inheritance: parent-->child
+						2.b) Multi-Level Inheritance: grandparent-->parent-->child
+						2.c) Multiple Inheritance: (Parent1 & Parent2)-->child (Not-possible in java due to diamond ambiguity)
+						2.d) Hybrid Inheritance: parent--> child1 & child2
+					Accessing variables:
+						 i)  SuperClass variable in Subclass --> super.variable_name
+						 ii) Instance variable of same class --> this.variable_name
+						 iii)Global variable of same class (Static variable)--> variable_name
+						 
+			3. Polymorphism: One object taking multiple forms or behaviors
+					Type of Polymorphism:
+						i)Compile-time polymorphism / Early binding
+							--> Binding of method declaration & definitions together happens based on arguments
+							(Out of duplicate methods, JVM differentiate methods based on arguments passed in method)
+							--> Binding happens at compile-time (called as Early-binding )
+							--> this is also called as method-overloading
+						ii) Run-time polymorphism / Late binding
+							--> Binding of method declaration & definitions together happens based on object
+							(Out of duplicate methods, JVM prefers method of class for which object is created) 
+							--> Binding happens at run-time (called as Late-binding )
+							--> this is also called as method-overriding
+							
+			4. Abstraction: hiding unnecessary data form being used 
+						--> make the members (methods, variables etc.) of class private
+						--> use keyword 'private' to make members private
+
+-------------------------------------------------------------------------------------------------------
+Error Handling in JAVA:
+			Error --> failure due to unexpected behavior of written code
+				Types of Error: 
+					1. Compile-Time Error  --> syntactical error in program causes failure (cannot be handled)
+					2. Run-time Error (Exceptions) --> inefficiency of computer system to execute certain statements
+					3. Logical Error --> depicts flaws in logic of program (cannot be handled)
+			** Java has 'java.lang' package which contains 'Throwable' class that represents all types of errors
+			** specifically to handle Run-time errors (exceptions) there is superclass 'Exception' 
+			
+Exceptions (Run-time error) in JAVA:
+		Exceptions--> the run-time error that can be identified & handled are called as exceptions
+			Types of Exceptions:
+				
+				1. Checked Exceptions --> exceptions that 'JAVA-compiler' checks at compilation time & handled it
+									--> it is also called as 'Compile-time' exceptions
+								    --> compiler uses 'throws' clause to handle such exceptions
+									--> e.g. IOException, ClassNotFoundException, FileNotFoundException, SQLException,
+											 InvocationTargetException, NoSuchMethodException, NoSuchFieldException etc.
+											  
+				2. Unchecked Exceptions --> exceptions that 'JVM' checks at run-time & handled it
+										--> it is also called as 'Run-time' exceptions
+										--> e.g. ArithmaticException, NullPointerException, NumberFormatExceptions, 
+												ArrayIndexOutOfBoundsException,StringIndexOutOfBoundsExceptions etc.
+										--> JVM handles such exceptions using blocks like
+											a. try-catch()-finally blocks: 
+												*try{}--> the block that should contains statement may cause exceptions
+													 -->if exception occurs, exception details are stored in exception-stack		
+												*catch()-->the block in which exceptions details are shown to user 
+													  {}-->it refers exception-stack to show such details
+												*finally{}-->the block in which all clean-up action happens to avoid file
+														    corruption
+														  --> Clean up actions : Closing Files, terminating threads etc.
+														  --> this always execute irrespective of exception occurs or not 
+											b. try-throw-catch()blocks:
+												*throw --> it is used when programmer wants to handle exception explicitly
+														   using catch block
+-------------------------------------------------------------------------------------------------------
+												
+					
